@@ -18,24 +18,27 @@ public class Steps {
 	
 	
 	@Given("I am able to naviagte onto the login page")
-	public void i_am_able_to_naviagte_onto_the_login_page() {
+	public void i_am_able_to_naviagte_onto_the_login_page() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "C://Users//RohitRaman//Downloads//chromedriver_win32//chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://opensource-demo.orangehrmlive.com/");
+		Thread.sleep(5000);
 	   
 	}
 
 
 
 	@When("I Enter the username as {string}")
-	public void i_enter_the_username_as(String string) {
+	public void i_enter_the_username_as(String string) throws InterruptedException {
 		 driver.findElement(By.id("txtUsername")).sendKeys(string);
+		 Thread.sleep(5000);
 	  
 	}
 	@When("I Enter the password as {string}")
-	public void i_enter_the_password_as(String string) {
+	public void i_enter_the_password_as(String string) throws InterruptedException {
 		   driver.findElement(By.id("txtPassword")).sendKeys(string);
+		   Thread.sleep(5000);
 	    
 	}
 	@When("I click on the login button")
@@ -50,7 +53,7 @@ public class Steps {
 		   Assert.assertEquals(expected, string);
 		   driver.findElement(By.id("welcome")).click();
 		   Thread.sleep(3000);
-		   driver.findElement(By.xpath("//*[@id='welcome-menu']/ul/li[3]/a")).click();
+		   driver.findElement(By.xpath("//*[@id='welcome-menu']/ul/li[2]/a")).click();
 		   Thread.sleep(3000);
 		   
 	  

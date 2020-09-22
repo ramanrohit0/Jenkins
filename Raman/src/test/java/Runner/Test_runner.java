@@ -6,10 +6,13 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions( features = {"C:/SopraSpace/Raman/pom.xml"},glue={"Steps"},
+@CucumberOptions( features = {"src/test/resources/Login/Login.feature"},glue={"Steps"},
+		dryRun=false,
+		monochrome=true,
+		strict = true,
 		plugin = {"html:testoutput.html"})
 
 
-public class RunnerTest {
+public class Test_runner {
 
 }
